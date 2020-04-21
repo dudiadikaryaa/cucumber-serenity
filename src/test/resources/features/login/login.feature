@@ -4,7 +4,7 @@ Feature: Login Scenarios
   I want to log in into the system
   So that I'm authorized to make transactions
 
-  @positive_1
+  @case1
   Scenario: Login failed using incorrect username & password
     Given the user opens Web
     When the user clicks Login Portal button

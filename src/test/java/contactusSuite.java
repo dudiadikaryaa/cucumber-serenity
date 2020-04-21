@@ -3,6 +3,6 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features="src/test/resources/features/login/login.feature")
-public class loginSuite {
+@CucumberOptions(features="src/test/resources/features/contactus/contactus.feature")
+public class contactusSuite {
 }

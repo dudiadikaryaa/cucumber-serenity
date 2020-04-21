@@ -1,10 +1,10 @@
 package Test;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import Steps.loginSteps;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.When;
 
 public class login {
     @Steps
