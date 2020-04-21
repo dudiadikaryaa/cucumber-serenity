@@ -7,10 +7,11 @@
 > Cucumber is a testing tool that supports Behavior Driven Development (BDD). It offers a way to write tests that anybody can understand, regardless of their technical knowledge. https://cucumber.io/
 
 > Serenity BDD is a simple but powerful way to produce illustrated, narrative Test Reports that document and describe what your application does and how it works. www.thucydides.info/
+ 
 
 ### Prerequisites:
 
-- Java v1.8
+- Java 1.8
 - Maven 3.5.2
 - IntelliJ IDEA
 - Chromedriver 81.0 (Depends on your Chrome Version)
