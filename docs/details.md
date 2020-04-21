@@ -27,18 +27,18 @@ First thing first, here's the directory architecture that I've used until now, a
 | Test          | Code scripts defining steps from feature file                        |
 | *Suite.java   | This is a runner for your feature file                        |
 
-#### Coding Workflow
+#### Basic Coding Workflow
 
-* Create a new file `{featureName}.feature` in `./resources/features/`
-* Start [Writing Your Feature File Test Scenarios](#writing-the-test-case).
-* Create a new java class for you test case feature in `./java/Test/`
-* Start [Writing Your Test Java Class Script](#writing-your-test-java-class-script).
-* Create a new java class in `./java/Steps/`
-* Start [Writing Your Steps Java Class Script](#writing-your-steps-java-class-script).
-* Create a new java class in `./java/Pages/`
-* Start [Writing Your Pages Java Class Script](#writing-your-pages-java-class-script).
-* Create a new `{featureName}Suite.java` class in `./java/`
-* Start [Writing Your Runner Suite Java Class Script](#writing-your-runner-suite-java-class-script).
+1. Create a new file `{featureName}.feature` in `./resources/features/`
+2. Start [Writing Your Feature File Test Scenarios](#writing-the-test-case).
+3. Create a new java class for you test case feature in `./java/Test/`
+4. Start [Writing Your Test Java Class Script](#writing-your-test-java-class-script).
+5. Create a new java class in `./java/Steps/`
+6. Start [Writing Your Steps Java Class Script](#writing-your-steps-java-class-script).
+7. Create a new java class in `./java/Pages/`
+8. Start [Writing Your Pages Java Class Script](#writing-your-pages-java-class-script).
+9. Create a new `{featureName}Suite.java` class in `./java/`
+10. Start [Writing Your Runner Suite Java Class Script](#writing-your-runner-suite-java-class-script).
 
 #### Writing the Test Case
 
@@ -49,3 +49,5 @@ First thing first, here's the directory architecture that I've used until now, a
 #### Writing Your Pages Java Class Script
 
 #### Writing Your Runner Suite Java Class Script
+
+#### Test Report
