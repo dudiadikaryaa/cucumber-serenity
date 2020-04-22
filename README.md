@@ -17,6 +17,11 @@
 - Chromedriver 81.0 (Depends on your Chrome Version)
 
 ### Get Started:
+Clone this project repository into your local:
+```sh
+$ git clone https://github.com/dudiadikaryaa/cucumber-serenity.git
+```
+
 After you have successfully cloned this project repository, do the following:
 
 ```sh
