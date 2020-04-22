@@ -217,6 +217,52 @@ Here in `.java/Pages/` you will define the method that you've used and wrote in 
 
 ### Writing Runner Suite Java Class Script
 
+Here in `./java/` you will create a file, created just to be a runner file.
+1. Create the java class file with format `{featureName}Suite`. 
+   For example, for `login` I created `loginSuite` java class file.
+   
+   > Note that you can change this format to your needs in the pom.xml file.
+   
+   ```xml
+   <configuration>
+        <includes>
+             <include>**/*Suite.java</include> //Here's where you can change it to your needs
+                  </includes>
+                  <argLine>-Xmx512m</argLine>
+                  <threadCount>2</threadCount>
+                  <!--                    <parallel>classes</parallel>-->
+   </configuration>
+   ```
+
+2. Add this mandatory java package
+   ```java
+   import cucumber.api.CucumberOptions;
+   import net.serenitybdd.cucumber.CucumberWithSerenity;
+   import org.junit.runner.RunWith;
+   ```
+3. Below the package scripts (before the java class method scripts), add the following scripts:
+   ```java
+   @RunWith(CucumberWithSerenity.class)
+   @CucumberOptions(features="src/test/resources/features/login/login.feature")
+   ```
+   
+   >Note that you will need to point the `features="` to your feature.file directory.   
+   
+   You can add other configuration inside the `@CucumberOptions` like using `@tags` to only run a specific tag, or using `@skip` to skip a specific tag, etc. Please go [here](https://cucumber.io/docs/cucumber/api/#running-cucumber) for the complete documentation.
+   
+4. Your runner java class scripts should look like this
+   ```java
+   import cucumber.api.CucumberOptions;
+   import net.serenitybdd.cucumber.CucumberWithSerenity;
+   import org.junit.runner.RunWith;
+   
+   @RunWith(CucumberWithSerenity.class)
+   @CucumberOptions(features="src/test/resources/features/login/login.feature")
+   public class loginSuite {
+   }
+   ```
+   
+   You can run your test suite individually directly through IntelliJ Run option from the runner without generating serenity report.
 ---
 
 ### Test Report
