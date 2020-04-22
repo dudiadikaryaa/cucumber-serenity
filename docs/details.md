@@ -266,3 +266,19 @@ Here in `./java/` you will create a file, created just to be a runner file.
 ---
 
 ### Test Report
+To run the test and generate the Test Report, use this command in terminal:
+```sh
+$ mvn clean verify                                          | Run all test & generate Test Report
+$ mvn clean verify -Dcucumber.options="--tags @login"       | Run only @login tag & generate Test Report
+```
+
+After it successfully run, it will generate your test reports in `target/site/serenity`. I usually directly search for `index.html` file inside of that directory, and when you open it in your web browser, it will look like this:
+
+![Serenity Report](img/report-serenity.png)
+
+Serenity reports provide detailed Test Result with detailed summary, and you can also see the pie chart and percentage of fail and success rate of your test automation.
+
+![Serenity Report Details](img/report-serenity-details.png)
+
+The Test Report can also provide you automatically with screenshots for each of your test steps. This is configured in the `serenity.properties` file using this scripts: `serenity.take.screenshots=AFTER_EACH_STEP`. You can checkout other option for `serenity.properties` [here](https://github.com/serenity-bdd/serenity-documentation/blob/master/src/asciidoc/system-props.adoc) !
+
