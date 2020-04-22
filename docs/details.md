@@ -27,6 +27,7 @@ First thing first, here's the directory architecture that I've used until now, a
 | Test          | Code scripts defining steps from feature file                        |
 | *Suite.java   | This is a runner for your feature file                        |
 
+---
 ### Basic Coding Workflow
 
 1. Create a new file `{featureName}.feature` in `./resources/features/`
@@ -39,6 +40,8 @@ First thing first, here's the directory architecture that I've used until now, a
 8. Start [Writing Your Pages Java Class Script](#writing-pages-java-class-script).
 9. Create a new `{featureName}Suite.java` class in `./java/`
 10. Start [Writing Your Runner Suite Java Class Script](#writing-runner-suite-java-class-script).
+
+---
 
 ### Writing Feature File Test Case
 Here in `./resources/features/`, you will write your Test Case Scenarios in BDD Gherkin Format.
@@ -65,6 +68,8 @@ Feature: Login Scenarios
 > You can also define variables that can be parsed into the step definition later, for example here `asdf` will be marked blue, showing that it's a variable. For how to make it as a variable will be explained in Test Java Script later.
 
 There are much more for formatting the gherkin syntax in feature.file, please check the detailed explanation [here](https://cucumber.io/docs/gherkin/reference/).
+
+---
 
 ### Writing Test Java Class Script
 Here, you will write the Steps Definition in `./java/Test/` for the steps in feature file that you wrote earlier.
@@ -104,6 +109,8 @@ Here, you will write the Steps Definition in `./java/Test/` for the steps in fea
    To define a variable in a test steps, use `{word}` to convert the wording into variable, for example above, `asdf` will be defined as a variable.
 4. Add the method name inside the step definition. You will define this method in the Steps File that has been imported in the java package.
 
+---
+
 ### Writing Steps Java Class Script
 Here in `./java/Steps/` you will define the methods that you've used and wrote in the java class in `java/Test` earlier.
 1. Add the java package first with this code
@@ -142,9 +149,15 @@ Here in `./java/Steps/` you will define the methods that you've used and wrote i
    }
    ```
    > Notice that I redefine the variable in the parameter field (you can change the name of the variable too) and pass it again in the method inside of it.
+
+---
    
 ### Writing Pages Java Class Script
 
+---
+
 ### Writing Runner Suite Java Class Script
+
+---
 
 ### Test Report
