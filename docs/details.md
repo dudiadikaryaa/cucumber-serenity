@@ -1,6 +1,8 @@
 ##  Let's start!
 When you've successfully installed all the packages, you are ready to go. However, if you stumbled on some errors on installing some packages, you may need to adjust some dependencies to your device and OS.
 
+We are using Selenium as our command scripts methods and Cucumber + Serenity for the BDD format and Test Reports.
+
 ### Directory Architecture
 First thing first, here's the directory architecture that I've used until now, and it still works flawlessly.
 
@@ -153,7 +155,64 @@ Here in `./java/Steps/` you will define the methods that you've used and wrote i
 ---
    
 ### Writing Pages Java Class Script
+Here in `.java/Pages/` you will define the method that you've used and wrote in `java/Steps/`. Basically, all the code about what you want to do for your testing (e.g. Clicking button, Asserting Text, Scrolling), you will write it here.
+1. Add the mandatory java package
+   
+   ```java
+   import net.thucydides.core.pages.PageObject; 
+   ```
+   And add `extends PageObject` into the java class method, so it will be like this:
+   
+   ```java
+   public class loginPages extends PageObject{
+   
+   }
+   ```
+2. Define the method that you've used earlier. For example:
+   ```java
+   loginPages.clickLoginPage();
+   ```
+   To define method above, write your code like below:
+   ```java
+   public void clickLoginPage(){
+   }
+   ```
+3. Before you write your scripts inside the java method, you might like to define the object that you are going to interact with. For example, in step above, I'm going to define `clickLoginPage` method, and I need to use and define the `Login` button, here's the example:
+   ```java
+   @FindBy(id = "login-portal")
+   WebElement loginPage; //Defining Button as WebElement
+   ``` 
+   
+   > Note that you will need to import a new java package to user the WebElement & FindBy package service.
+   ```java
+   import org.openqa.selenium.WebElement;
+   import org.openqa.selenium.support.FindBy;
+   ```
+                                                                                                                                                                                                                                                                                                                                                                  
+   In this case, I've inspected the web element and search for the `Login` button element details, and I found the id is `login-portal`. You can use other identifier too, like `name` , `class` , or `xpath`. 
 
+4. Write the scripts for what are you going to do for the method. 
+   
+   You might need to import several packages for your scripts. For example, I use Selenium commands and other packages for my methods, so I add this additional packages.
+   ```java
+   import org.openqa.selenium.support.ui.ExpectedConditions;
+   
+   import java.util.ArrayList;
+   
+   import static org.junit.Assert.assertEquals;
+   ```
+   
+   Then for the scripts to define what I'm going to do in this method, here's the example:
+   ```java
+   public void clickLoginPage(){
+       element(loginPage).shouldBeVisible();
+       loginPage.click();
+   
+       ArrayList<String> tabs2 = new ArrayList<String> (getDriver().getWindowHandles());
+       getDriver().switchTo().window(tabs2.get(1));
+   }
+   ```
+   > You can modify the package that you need to use in your `Pages` file, it can differ between each `Pages` file.
 ---
 
 ### Writing Runner Suite Java Class Script
