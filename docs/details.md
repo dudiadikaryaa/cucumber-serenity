@@ -108,7 +108,7 @@ Here, you will write the Steps Definition in `./java/Test/` for the steps in fea
        loginSteps.inputUsername(username);
     }
     ```
-   To define a variable in a test steps, use `{word}` to convert the wording into variable, for example above, `asdf` will be defined as a variable.
+   To define a variable in a test steps, use `{word}` (for String) to convert the wording into variable, for example above, `asdf` will be defined as a variable.
 4. Add the method name inside the step definition. You will define this method in the Steps File that has been imported in the java package.
 
 ---
