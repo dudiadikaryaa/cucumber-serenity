@@ -1,7 +1,7 @@
 ##  Let's start!
 When you've successfully installed all the packages, you are ready to go. However, if you stumbled on some errors on installing some packages, you may need to adjust some dependencies to your device and OS.
 
-#### Directory Architecture
+### Directory Architecture
 First thing first, here's the directory architecture that I've used until now, and it still works flawlessly.
 
     .
@@ -27,7 +27,7 @@ First thing first, here's the directory architecture that I've used until now, a
 | Test          | Code scripts defining steps from feature file                        |
 | *Suite.java   | This is a runner for your feature file                        |
 
-#### Basic Coding Workflow
+### Basic Coding Workflow
 
 1. Create a new file `{featureName}.feature` in `./resources/features/`
 2. Start [Writing Your Feature File Test Scenarios](#writing-feature-file-test-case).
@@ -40,7 +40,7 @@ First thing first, here's the directory architecture that I've used until now, a
 9. Create a new `{featureName}Suite.java` class in `./java/`
 10. Start [Writing Your Runner Suite Java Class Script](#writing-runner-suite-java-class-script).
 
-#### Writing Feature File Test Case
+### Writing Feature File Test Case
 Here, you will write your Test Case Scenarios in BDD Gherkin Format.
 For example in this repo, I created `login.feature` file to test the Login Feature.
 
@@ -66,7 +66,7 @@ Feature: Login Scenarios
 
 There are much more for formatting the gherkin syntax in feature.file, please check the detailed explanation [here](https://cucumber.io/docs/gherkin/reference/).
 
-#### Writing Test Java Class Script
+### Writing Test Java Class Script
 Here, you will write the Steps Definition for the steps in feature file that you wrote earlier.
 1. When you've created the file, add the java package first, to define your test Steps.
 
