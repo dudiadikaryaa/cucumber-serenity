@@ -41,7 +41,7 @@ First thing first, here's the directory architecture that I've used until now, a
 10. Start [Writing Your Runner Suite Java Class Script](#writing-runner-suite-java-class-script).
 
 ### Writing Feature File Test Case
-Here, you will write your Test Case Scenarios in BDD Gherkin Format.
+Here in `./resources/features/`, you will write your Test Case Scenarios in BDD Gherkin Format.
 For example in this repo, I created `login.feature` file to test the Login Feature.
 
 ```gherkin
@@ -67,7 +67,7 @@ Feature: Login Scenarios
 There are much more for formatting the gherkin syntax in feature.file, please check the detailed explanation [here](https://cucumber.io/docs/gherkin/reference/).
 
 ### Writing Test Java Class Script
-Here, you will write the Steps Definition for the steps in feature file that you wrote earlier.
+Here, you will write the Steps Definition in `./java/Test/` for the steps in feature file that you wrote earlier.
 1. When you've created the file, add the java package first, to define your test Steps.
 
     ```java
@@ -93,7 +93,7 @@ Here, you will write the Steps Definition for the steps in feature file that you
    
    Note:
     ```gherkin
-    And the user input username asdf
+    And the user input username asdf //example of feature.file steps
     ```
     ```java
     @And("the user input username {word}")
@@ -104,11 +104,47 @@ Here, you will write the Steps Definition for the steps in feature file that you
    To define a variable in a test steps, use `{word}` to convert the wording into variable, for example above, `asdf` will be defined as a variable.
 4. Add the method name inside the step definition. You will define this method in the Steps File that has been imported in the java package.
 
-#### Writing Steps Java Class Script
+### Writing Steps Java Class Script
+Here in `./java/Steps/` you will define the methods that you've used and wrote in the java class in `java/Test` earlier.
+1. Add the java package first with this code
+   
+    ```java
+    import Pages.loginPages; //this is your pages file {featureName}Pages
+    import net.thucydides.core.annotations.Step;
+    ```
+   
+2. Add `loginPages loginPages` to implement the imported Pages file. 
+   Add `@Step` above each method that you will define later to implement the java package.
 
+3. Create the method defining the used method in your pervious Test File. For example:
+    ```java
+    loginSteps.clickLoginPage();
+    ```   
+   To define method above, write this script:
+   ```java
+   @Step
+   public void clickLoginPage(){
+       loginPages.clickLoginPage();
+   }
+   ```
+   > Pay attention to `@Step` above the method, you will need to add it everytime you define a method.
+   
+   Note: For a method that contains a variable, you need to re-define the variable in the Steps file. For example:
+   ```java
+   loginSteps.inputUsername(username);
+   ```
+   
+   To define the method above, write code like below:
+   ```java
+   @Step
+   public void inputUsername(String username){
+       loginPages.inputUsername(username);
+   }
+   ```
+   > Notice that I redefine the variable in the parameter field (you can change the name of the variable too) and pass it again in the method inside of it.
+   
+### Writing Pages Java Class Script
 
-#### Writing Pages Java Class Script
+### Writing Runner Suite Java Class Script
 
-#### Writing Runner Suite Java Class Script
-
-#### Test Report
+### Test Report
