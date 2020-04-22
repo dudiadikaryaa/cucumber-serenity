@@ -265,7 +265,17 @@ Here in `./java/` you will create a file, created just to be a runner file.
    You can run your test suite individually directly through IntelliJ Run option from the runner without generating serenity report.
 ---
 
-### Test Report
+### Running the Test & Generating Test Report
+Before running the test, you may want to check your configuration in `serenity.properties`. In this project case, I attached the website url inside `serenity.properties` and choosing Incognito Chrome as my runner web-browser. Here's the example config:
+
+```sh
+webdriver.driver=chrome
+webdriver.base.url=http://webdriveruniversity.com/
+chrome.switches=--incognito
+serenity.browser.width=1366
+serenity.browser.height=768
+```
+
 To run the test and generate the Test Report, use this command in terminal:
 ```sh
 $ mvn clean verify                                          | Run all test & generate Test Report
